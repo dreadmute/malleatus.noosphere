@@ -28,3 +28,59 @@ export const getQuote = async () => {
     quote: `“${data.content}” — ${data.author}`,
   };
 };
+
+export const getBanner = async () => {
+  const { data } = await axios.get('https://raw.githubusercontent.com/dreadmute/crusade_log/main/banner.html');
+
+  return data;
+};
+
+export const getLogs = async () => {
+  const { data } = await axios.get('https://api.github.com/repos/dreadmute/crusade_log/git/trees/main?recursive=1');
+  const jsonLogs = JSON.stringify(data);
+
+  let message = '';
+  let logs = [];
+
+  for (var i=0; i<data['tree'].length; i++){
+    let path = JSON.stringify(data['tree'][i]['path']);
+    if (path.includes('logs/')) {
+      let log = path.split("/")[1].replace(`.txt"`,'').replace(`.html"`,'');
+      logs.push(log);
+    }
+  }
+  
+  logs.sort(function(a, b) { return b - a});
+
+  for (const log of logs) {
+    message += `${log} \n`;
+  }
+
+  return message;
+};
+
+export const getLatest = async () => {
+  const { data } = await axios.get('https://api.github.com/repos/dreadmute/crusade_log/git/trees/main?recursive=1');
+
+  let logs = [];
+
+  for (var i=0; i<data['tree'].length; i++){
+    let path = JSON.stringify(data['tree'][i]['path']);
+    if (path.includes('logs/')) {
+      let log = path.split("/")[1].replace(`.txt"`,'').replace(`.html"`,'');
+      logs.push(log);
+    }
+  }
+  logs.sort(function(a, b) { return b - a});
+  
+  const latest = await axios.get(`https://raw.githubusercontent.com/dreadmute/crusade_log/main/logs/${logs[0]}.html`);
+  return latest.data;
+
+};
+
+export const getLog = async(log: string) => {
+  const { data } = await axios.get(`https://raw.githubusercontent.com/dreadmute/crusade_log/main/logs/${log}.html`);
+
+  return data;
+};
+

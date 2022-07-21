@@ -18,7 +18,7 @@ export const Ps1 = () => {
           color: theme.yellow,
         }}
       >
-        guest
+        msico.tz19
       </span>
       <span
         style={{
@@ -32,7 +32,7 @@ export const Ps1 = () => {
           color: theme.green,
         }}
       >
-        {hostname}
+        malleatus
       </span>
       <span
         style={{

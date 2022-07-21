@@ -1,0 +1,15 @@
+  ███    ███  █████  ██      ██      ███████  █████  ████████ ██    ██ ███████ 
+  ████  ████ ██   ██ ██      ██      ██      ██   ██    ██    ██    ██ ██      
+  ██ ████ ██ ███████ ██      ██      █████   ███████    ██    ██    ██ ███████ 
+  ██  ██  ██ ██   ██ ██      ██      ██      ██   ██    ██    ██    ██      ██ 
+  ██      ██ ██   ██ ███████ ███████ ███████ ██   ██    ██     ██████  ███████ 
+                         NOOSPHERE ACCESS TERMINAL v${packageJson.version}
+
+++ This NOOSPHERIC ACCESS TERMINAL is a fork of recovered <a href="https://github.com/m4tt72/terminal">original STC</a> ++
+
+Status:             Standby
+Recon Focus:        Tyranid Hive Fleet Designation MYRKR
+Retrieval Target:   ██████████████████████████
+
+Type 'help' to see list of available commands.
+Type 'latest' to retrieve latest reports from Shield Host Dreadsmith.

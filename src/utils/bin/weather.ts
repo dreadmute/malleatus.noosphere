@@ -7,7 +7,7 @@ export const weather = async (args: string[]): Promise<string> => {
     return 'Usage: weather [city]. Example: weather casablanca';
   }
 
-  const weather = await getWeather(city);
+  // const weather = await getWeather(city);
 
-  return weather;
+  return 'Warp Storms';
 };

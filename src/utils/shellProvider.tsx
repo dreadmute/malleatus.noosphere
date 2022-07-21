@@ -31,6 +31,29 @@ export const ShellProvider: React.FC<ShellProviderProps> = ({ children }) => {
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
+    let message = '';
+
+    message += 'QUERY:     Logging into ship noosphere system...\n'
+    message += 'QUERY:     Stored ident authenticating...\n'
+    message += 'RESPONSE:  AUTHENTICATED\n'
+    message += '\n'
+    message += 'QUERY:     Prayers to Omnissiah inloaded...\n'
+    message += 'RESPONSE:  BLESSING COMPLETE\n'
+    message += '\n'
+    message += 'QUERY:     Prepare flesh based interface...\n'
+    message += 'RESPONSE:  INFERIOR INTERFACE LOADED\n'
+    message += '\n'
+    message += '\n'
+    message += '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n'
+    message += 'WARNING:   data may be obfuscated or subject to corruption when accessing via non-binaric methods\n'
+    message += '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n'
+    message += '\n'
+    message += '01001111 01101101 01101110 01101001 01110011 01110011 01101001 01100001 01101000 00100000 01100010\n01100101 00100000 01110000 01110010 01100001 01101001 01110011 01100101 01100100\n'
+    setHistory(message)
+
+  }, []);
+
+  useEffect(() => {
     setCommand('banner');
   }, []);
 
